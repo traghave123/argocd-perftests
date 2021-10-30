@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: perftest
+  namespace: openshift-gitops
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/traghave123/argocd-perftests
+      revision: master
+      directories:
+      - path: argoapp-*
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: default
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
+        automated:
+          prune: true
+          selfHeal: true
+      source:
+        repoURL: https://github.com/traghave123/argocd-perftests
+        targetRevision: master
+        path: '{{path}}'
+      destination:
+        server: https://api.sno-1.vran.ibm.com:6443
+        namespace: '{{path.basename}}'
