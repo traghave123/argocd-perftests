@@ -1,4 +1,4 @@
-for i in {501..1000}
+for i in {1011..1020}
 do
     echo "output: $i"
     folderName="argoapp-$i" 
