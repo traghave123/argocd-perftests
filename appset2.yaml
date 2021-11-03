@@ -1,8 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: perftest
-  namespace: openshift-gitops2
+  name: perftest2
+  namespace: openshift-gitops
 spec:
   generators:
   - git:
