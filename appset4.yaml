@@ -26,5 +26,5 @@ spec:
         targetRevision: master
         path: '{{path}}'
       destination:
-        server: https://api.sno-1.vran.ibm.com:6443
+        server: https://api.sno-5.vran.ibm.com:6443
         namespace: '{{path.basename}}'
