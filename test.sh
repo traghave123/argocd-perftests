@@ -1,7 +1,7 @@
-for i in {0..1000}
+for i in {1001..2000}
 do
     echo "output: $i"
     folderName="argoapp-$i" 
-    mkdir instance1/$folderName
-    cp app.yaml instance1/$folderName/
+    mkdir instance2/$folderName
+    cp app.yaml instance2/$folderName/
 done
